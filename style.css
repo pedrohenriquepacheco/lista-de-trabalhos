@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto' , sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; 
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://cdn.pixabay.com/photo/2017/02/06/15/32/cannon-2043407_1280.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden; 
+    width: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    flex-wrap: wrap; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+    flex-shrink: 0; 
+}
+
+.navigation {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: flex-end; 
+    align-items: center;
+    gap: 40px;
+}
+
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap; 
+    flex-shrink: 0; 
+}
+
+.navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    transition: .5s;
+    flex-shrink: 0; 
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; 
+    overflow: hidden;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translate(-50%);
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: #ffffff;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    gap: 5px; 
+    width: 100%;
+}
+
+.remember-forgot label {
+    display: flex; 
+    align-items: center;
+    white-space: nowrap; 
+    flex-shrink: 0; 
+}
+
+
+.remember-forgot label input {
+    accent-color: #162938;
+    margin-right: 3px;
+    width: auto; 
+    height: auto;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap; 
+    flex-shrink: 0; /
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn { 
+    display: block; 
+    width: 100%;
+    max-width: 250px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}
+
+.btn:hover {
+    background-color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 20px; 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px; 
+    }
+
+    .logo {
+        font-size: 1.6em; 
+    }
+
+    .navigation {
+        width: 100%; 
+        justify-content: center; 
+        gap: 10px; 
+        flex-wrap: wrap; 
+    }
+
+    .navigation a {
+        font-size: 0.95em; 
+        padding: 5px 8px; 
+    }
+
+    .navigation .btnLogin-popup {
+        width: 120px; 
+        height: 38px;
+        font-size: 0.95em;
+        margin-left: 0; 
+        margin-top: 10px; 
+    }
+
+    .wrapper {
+        width: 90%; 
+        max-width: 350px; 
+        padding: 25px; 
+        margin: 15px auto; 
+    }
+
+    .form-box h2 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+
+    .input-box {
+        margin: 25px 0; 
+    }
+
+    .input-box label,
+    .input-box input {
+        font-size: 0.95em;
+    }
+
+    .input-box .icon {
+        font-size: 1.1em;
+        line-height: 48px; 
+    }
+
+    .remember-forgot {
+        font-size: 0.85em;
+        margin: -10px 0 10px;
+        justify-content: center; 
+        gap: 8px;
+    }
+
+    .btn {
+        width: 95%; 
+        max-width: 220px; 
+        font-size: 0.95em;
+        padding: 8px 18px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 15px; 
+        gap: 5px;
+    }
+
+    .logo {
+        font-size: 1.4em;
+    }
+
+    .navigation {
+        gap: 5px; 
+    }
+
+    .navigation a {
+        font-size: 0.85em;
+        padding: 3px 6px;
+    }
+
+    .navigation .btnLogin-popup {
+        width: 100px;
+        height: 32px;
+        font-size: 0.85em;
+        margin-top: 5px;
+    }
+
+    .wrapper {
+        width: 95%; 
+        max-width: 300px; 
+        margin: 10px auto; 
+        padding: 20px; 
+    }
+
+    .form-box h2 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+    }
+
+    .input-box {
+        margin: 20px 0;
+    }
+
+    .input-box label,
+    .input-box input {
+        font-size: 0.85em;
+    }
+
+    .input-box .icon {
+        font-size: 0.9em;
+        line-height: 40px;
+    }
+
+    .remember-forgot {
+        font-size: 0.75em;
+        margin: -8px 0 8px;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 5px;
+    }
+    .remember-forgot label,
+    .remember-forgot a {
+        width: 100%; 
+        text-align: center; 
+    }
+
+
+    .btn {
+        width: 100%; 
+        max-width: 180px; 
+        font-size: 0.85em;
+        padding: 8px 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
